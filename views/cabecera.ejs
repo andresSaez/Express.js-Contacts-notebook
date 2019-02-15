@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/public/css/estilos.css" rel="stylesheet">
+        <script type="text/javascript" src="/public/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/public/js/app.js"></script>
+    </head>
+    <body>
+        <header>
+            Mi agenda
+        </header>
+        <!-- Barra de navegación -->
+        <nav id="desktop">
+            <ul>
+                <li class="categoria">
+                    <a href="/">Inicio</a>
+                </li>
+                <li class="categoria">
+                    <a href="">Tipos</a>
+                    <%
+                    if (tipos.length > 0)
+                        {
+                        %>
+                        <ul class="submenu">
+                            <% tipos.forEach(tipo => { %>
+                                <li><a href="/contactos/<%= tipo.id %>"><%= tipo.nombre %></a></li>
+                            <% }); %>
+                        </ul>
+                        <% } %>
+                </li>
+                <li class="categoria">
+                    <a href="/filtrar_contactos">Filtrar</a>
+                </li>
+                <li class="categoria">
+                    <a href="/nuevo_contacto">Nuevo contacto</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="contenido">
+            <div class="container">
+                <div id="cabecera">
+                    <div id="titulo">
+                        <div id="logo"><img src="/public/imgs/contactos_logo.png" /></div>
+                        <div id="textotitulo">Contactos</div>
+                    </div>
+                    <a class="btn btn-secondary" href="/contactos">Listar contactos</a>&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-secondary" href="/nuevo_contacto">Nuevo contacto</a>&nbsp;&nbsp;&nbsp;        
+                </div>   
+ 

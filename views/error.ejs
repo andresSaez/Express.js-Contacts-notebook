@@ -1,0 +1,11 @@
+<%- include('cabecera'); %>
+<h1>Error buscando contactos</h1>
+<%
+if (error)
+{
+%>
+    <p><%=mensajeError%></p>
+<%
+} 
+%>
+<%- include('pie'); %>

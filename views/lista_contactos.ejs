@@ -1,0 +1,24 @@
+<%- include('cabecera'); %>
+<h1>Listado de contactos</h1>
+
+<%
+if (contactos.length > 0)
+{
+%>
+<ul>
+    <% contactos.forEach(contacto => { %>
+        <li>
+            <strong><%= contacto.nombre %> </strong> 
+            <span><%= contacto.edad %> años </span>
+            <a href="/contactos/<%=contacto.id%>"> Ver ficha</a>
+            <a href="#" id="<%= contacto.id %>" onclick="deleteContacto()"> Eliminar</a>
+        </li>
+    <% }); %>
+</ul>
+<%
+} else {
+%>
+<p>No se han encontrado contactos</p>
+<p><%=mensajeError%></p>
+<% } %>
+<%- include('pie'); %>

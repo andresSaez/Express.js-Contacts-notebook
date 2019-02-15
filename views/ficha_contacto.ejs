@@ -1,0 +1,35 @@
+<%- include('cabecera'); %>
+<h1>Ficha de contacto</h1>
+<%
+if (!error)
+{
+%>
+
+<img src="<%=contactos.imagen%>" alt="<%contactos.nombre%>">
+
+<ul style="display:inline-block">
+    <li>
+        <strong>Nombre: </strong> 
+        <span><%=contactos.nombre%></span>
+    </li>
+    <li>
+        <strong>Teléfono: </strong> 
+        <span><%=contactos.telefono%></span>
+    </li>
+    <li>
+        <strong>Edad: </strong> 
+        <span><%=contactos.edad%></span>
+    </li>
+    <li>
+        <strong>Tipo: </strong> 
+        <span><%=contactos.tipo.nombre %></span>
+    </li>
+</ul>
+
+<p><a href="/contactos/editar/<%=contactos.id%>" >Editar contacto</a></p>
+<%
+} else {
+%>
+<p><%=mensajeError%></p>
+<% } %>
+<%- include('pie'); %>
